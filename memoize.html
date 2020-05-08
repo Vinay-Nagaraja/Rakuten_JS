@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fibonacci(no) {
+            return (no === 0) || (no === 1) 
+                ? no : fibonacci(no - 1) + fibonacci(no - 2);
+        }    
+
+        function memoize(fn) {
+            var cache = window.localStorage;
+            return function(args) {
+                if(!cache[args]) {
+                    cache[args] = fn(args);
+                }
+                 return  cache[args];
+           }
+        }
+
+        var memFib = memoize(fibonacci);
+        console.time("first");
+         console.log(memFib(34));
+        console.timeEnd("first");
+
+        console.time("second");
+         console.log(memFib(36));
+        console.timeEnd("second");
+    </script>
+</body>
+</html>

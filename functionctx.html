@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data = {
+            "id": 100,
+            "name" : "Tim",
+            "getInfo" : function() {
+                console.log(this.id, this.name);
+            }
+        }
+
+        data.getInfo(); // 100, Tim ==> Invoke the function
+
+        var fn = data.getInfo; // fn is a reference to getInfo, but context is lost
+        fn(); // undefined, ==> Context, i.e., Object info is lost
+
+        var product = {
+            "id": 565,
+            "name" : "iPhone XR"
+        };
+
+        fn.call(data); //explicitly pass the context
+        fn.call(product);
+
+        var ptr = data.getInfo.bind(product);
+        ptr();
+
+    </script>
+</body>
+</html>

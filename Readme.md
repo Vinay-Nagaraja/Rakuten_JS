@@ -256,17 +256,157 @@ JavaScript
      				}
      		}
 
+     		 var products = [
+       {"id":1,"name":"iPhone","price":124447.44,"category" : "mobile"},
+       {"id":2,"name":"Onida","price":4444.44,"category" : "tv"},
+       {"id":3,"name":"OnePlus 6","price":98444.44,"category" : "mobile"},
+       {"id":4,"name":"HDMI connector","price":2444.00,"category" : "computer"},
+         {"id":5,"name":"Samsung","price":68000.00,"category" : "tv"}];
+
      	===============================
 
      	Resume @ 2:00
 
-     	
+     	Morning session:
+     		Variables in JS, how to declare, scope of the variable, hoisting
+     		declare a function "function" keyword, "functions" as first class members
+     		dynaminc typing, loosly typed language
+
+     		OOP
+     			function as function constructor for creating objects.
+     			"this" keyword to refer to the context [ access state of object using "this"]
+
+     			JSON as object representation
+
+     			functions and context
+
+     			var obj = new Object();
+
+     			obj.id = 100;
+     			obj.name = "Peter";
+
+     		----------------
+     		
+     		var actions = {
+     					"getInfo" : function() {
+            			    console.log(this.id, this.name);
+            			}
+       		}
+		 
+		 	var product = {
+            	"id": 565,
+            	"name" : "iPhone XR"
+        	};	
+
+        	var p = Object.assign(actions,product); // MIXIN
+
+        	p.id; // 565
+        	p.getInfo();
 
 
-     		console.log(person.getDetails()); // 1, smith
+        	=========
+
+        	var emp = {
+        			"email": "me@rakuten.com"
+        	};
+
+        	var copy = Object.assign({}, emp); // changing copy won't effect emp
+
+        	// var cp = emp; ==> Reference, changing cp will change emp
+
+        	pass copy to different functionliaties without worring about data corruption
+        	copy.email = "sdfs";
+
+        	======================================
+
+        	JavaScript ==> Callbacks and event driven programming
+
+        	=============================================================
+        	OOP --> functions/methods tightly coupled to state of object [ this ]
+
+        	var actions = {
+     					"getInfo" : function() {
+            			    console.log(this.id, this.name);
+            			}
+       		}
+
+       		getInfo is coupled to objects which has "id" and "name" ==> state
 
 
-     	==============
+        	Functional style of programming
+
+        	allows writing functions without tightly coupling to any object
+        	Functional style of programming uses High Order Functions.
+
+        	HOF:
+        		a) functions which accept other functions as arguments
+        			var f = function(num) {
+  							process(num);
+ 					};
+
+        			[1,2,3,4,5,6].forEach(f);
+
+        			setTimeout(function() { } , 100);
+
+        		b) function return a function [ closure]
+
+        			var a = 2;
+					b = 1;
+					function f(z) {
+						b = 3;
+						c = 4;
+						var d = 6;
+						e = 1;
+
+						function g() {	
+							var e = 0;
+							d = 3 * d;
+							return d;
+						}
+						return g; // return a function
+						var e;
+					 }
+
+					var fn = f(1); //  fn will not be a value, but function definition of "g"
+					fn();
+
+				=====================
+
+				Commonly used HOF:
+					a) filter
+						to get a subset
+						input m, output -- > n
+					b) map
+						to transform data
+						JSON ==> HTML
+						{
+							"id": 100,
+							"title" : "Laptop"
+						}
+
+						<tr>
+							<td>100</id> <td> Laptop </td>
+						</tr>
+						=========
+
+						pass product collection ==> get only names [string]
+						--
+						input = 100 elements , output = 100 elements transformed
+					c) reduce
+					d) forEach
+					e) limit
+					f) skip
 
 
 
+					function filter(predicate) {
+							create a empty collection
+							 loop thro input data
+								if(predicate)
+									add to collection
+								end if
+							end loop
+							return collection
+					}
+
+					 

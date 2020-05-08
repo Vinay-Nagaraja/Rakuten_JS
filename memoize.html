@@ -8,13 +8,16 @@
 </head>
 <body>
     <script>
+        function test() {
+
+        }
         function fibonacci(no) {
             return (no === 0) || (no === 1) 
                 ? no : fibonacci(no - 1) + fibonacci(no - 2);
         }    
 
         function memoize(fn) {
-            var cache = window.localStorage;
+            var cache = {};
             return function(args) {
                 if(!cache[args]) {
                     cache[args] = fn(args);
@@ -24,6 +27,9 @@
         }
 
         var memFib = memoize(fibonacci);
+
+        var memTest = memoize(test);
+        
         console.time("first");
          console.log(memFib(34));
         console.timeEnd("first");

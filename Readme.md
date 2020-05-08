@@ -409,4 +409,57 @@ JavaScript
 							return collection
 					}
 
-					 
+
+
+					======
+
+		Try This:
+		Map function input:
+		 var products = [
+            { "id": 1, "name": "iPhone", "price": 124447.44, "category": "mobile" },
+            { "id": 2, "name": "Onida", "price": 4444.44, "category": "tv" },
+            { "id": 3, "name": "OnePlus 6", "price": 98444.44, "category": "mobile" },
+            { "id": 4, "name": "HDMI connector", "price": 2444.00, "category": "computer" },
+            { "id": 5, "name": "Samsung", "price": 68000.00, "category": "tv" }];
+
+
+          var names = map(product, write mapper function to extract names);
+
+          forEach(names, console.log);
+          iPhone, Onida, OnePlus6, HDMI Connector, Samsung // output
+
+         =================
+
+         When one function returns another function. The inner function can access the data of outer function.
+         This is what is refered as closure. Closure is a mechasim using which inner function access
+         members of outer function.
+
+         --------
+
+         Flow: check the cache memory, if available get it, else perform opertion
+
+         	getEmployee(32);
+         		--> check in cache mem, else make a rest call
+         	fibonacci(34);
+         		--> check if we have computed this and get result, else compute
+
+         ---------------
+
+         var p = {"id":1,"name":"iPhone","price":124447.44,"category" : "mobile"};
+         p.name; // iPhone
+
+         Suppose if field is taken as varaible
+
+         var input = "name";
+
+         p[input]; // iPhone
+
+         ---------------------------------
+
+         var, OOP, HOF
+
+         ---------------------
+
+         ES6 features, DOM, jQuery
+
+         

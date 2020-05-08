@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var  customers = [{
+            "id": 1,
+            "firstName": "Rachel",
+            "lastName": "Green ",
+            "gender": "female",
+            "address": "Blore"
+        },
+        {
+            "id": 2,
+            "firstName": "Chandler",
+            "lastName": "Bing",
+            "gender": "male",
+            "address": "West Street"
+        },
+        {
+            "id": 3,
+            "firstName": "Joey",
+            "lastName": "Tribbiani",
+            "gender": "male",
+            "address": "Kattegat"
+        },
+        {
+            "id": 4,
+            "firstName": "Monica",
+            "lastName": "Geller",
+            "gender": "female",
+            "address": "some address"
+        },
+        {
+            "id": 5,
+            "firstName": "Ross",
+            "lastName": "Geller",
+            "gender": "male",
+            "address": "some address "
+        },
+        {
+            "id": 6,
+            "firstName": "Phoebe",
+            "lastName": "Buffay",
+            "gender": "female",
+            "address": "some address"
+        }
+    ];
+
+    for(var i = 0; i < customers.length; i ++) {
+        var customer = customers[i];
+        console.log(customer.firstName, customer.address);
+    }
+    </script>
+</body>
+</html>

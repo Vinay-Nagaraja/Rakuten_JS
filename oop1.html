@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Book(no, name) {
+            this.id = no; //state
+            this.title = name; //state
+        }
+        // prototype is a mechanism using which we can add behaviour to a object
+        Book.prototype.setId = function (id) {
+            this.id = id;
+        }
+
+        Book.prototype.setTitle = function (t) {
+            this.title = t;
+        }
+
+        Book.prototype.print = function () {
+            console.log(this.id, this.title);
+        }
+
+        var b1 = new Book(100, "Functional Programming");
+        var b2 = new Book(200, "JavaScript World");
+
+        b1.setTitle("Good Book");
+        b1.print();
+        b2.print();
+    </script>
+</body>
+
+</html>
